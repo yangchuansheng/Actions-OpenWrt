@@ -13,9 +13,9 @@ on:
     types: [published]
   push:
     branches:
-      - passwall
+      - master
     paths:
-      - '.config'
+      - '.config.passwall'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
@@ -24,7 +24,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: .config
+  CONFIG_FILE: .config.passwall
   DIY_SH: diy_passwall.sh
   FREE_UP_DISK: false
   SSH_ACTIONS: false
