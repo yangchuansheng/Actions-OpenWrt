@@ -18,13 +18,11 @@ jobs:
        env:
         # After sign up on the https://ngrok.com/
         # You can find this token here: https://dashboard.ngrok.com/get-started/setup
-        # NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
-        NGROK_TOKEN: 1gdq8VPZBNgzCVKVRGYy38Wz7jE_eN3MKD7Qqev8995dJph7
+        NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
 
         # This password you will use when authorizing via SSH 
-        # USER_PASS: ${{ secrets.USER_PASS }}
-        USER_PASS: murAmur
+        USER_PASS: ${{ secrets.USER_PASS }}
 
      - name: Don't kill instace
        if: ${{ failure() }}
-       run: sleep 1h # Prevent to killing instance after failure
+       run: sleep 12h # Prevent to killing instance after failure
