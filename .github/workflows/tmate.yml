@@ -1,0 +1,13 @@
+# .github/workflows/my-build.yml
+name: Debugging with SSH
+on: 
+  watch:
+    types: started
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v2
+
+     - name: Setup tmate session
+       uses: mxschmitt/action-tmate@v2
