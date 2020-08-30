@@ -1,5 +1,5 @@
 # .github/workflows/my-build.yml
-name: Debugging with SSH
+name: tmate
 on: 
   watch:
     types: started
