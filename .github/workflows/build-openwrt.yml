@@ -19,6 +19,7 @@ on:
       - main
     paths:
       - '.config'
+      - '.github/workflows/build-openwrt.yml'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
@@ -31,7 +32,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  SSH_ACTIONS: false
+  SSH_ACTIONS: true
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -89,7 +90,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@main
+      uses: csexton/debugger-action@master
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: Download package
