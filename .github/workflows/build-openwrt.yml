@@ -101,7 +101,7 @@ jobs:
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: Don't kill instace
-      if: ${{ failure() }}
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
       run: sleep 12h # Prevent to killing instance after failure
 
     - name: Download package
