@@ -38,7 +38,7 @@ env:
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: true
+  UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
@@ -178,9 +178,9 @@ jobs:
       uses: thedoctor0/zip-release@master
       if: steps.tag.outputs.status == 'success' && !cancelled()
       with:
-        directory: ${{ env.FIRMWARE }}
+        path: ${{ env.FIRMWARE }}
         filename: 'release.zip'
-        exclusions: '*.buildinfo *.bin *.manifest sha256sums'
+        exclusions: '${{ env.FIRMWARE }}/*.buildinfo ${{ env.FIRMWARE }}/*.bin ${{ env.FIRMWARE }}/*.manifest ${{ env.FIRMWARE }}/sha256sums'
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
