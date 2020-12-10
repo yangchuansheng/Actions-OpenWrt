@@ -11,7 +11,7 @@ on:
     types: started
 jobs:
   build:
-    runs-on: macos-11.0
+    runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v1
 
