@@ -40,6 +40,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
+  UPLOAD_WSS: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -163,6 +164,17 @@ jobs:
         ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+        
+    - name: Upload firmware to wenshushu
+      id: wenshushu 
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WSS == 'true' && !cancelled()
+      run: |
+        git clone https://github.com/Aruelius/wenshushu
+        cd wenshushu
+        pip3 install requests base58 pycryptodomex
+        python3 wss.py upload ${FIRMWARE} 2>&1 | tee wenshushu.log
+        echo "::warning file=wenshushu.com::$(cat wenshushu.log | grep 公共链接)"
+        echo "::set-output name=url::$(cat wenshushu.log | grep 公共链接 | cut -f2 -d"：")"
 
     - name: Generate release tag
       id: tag
@@ -172,6 +184,7 @@ jobs:
         touch release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
+        [ $UPLOAD_WSS = true ] && echo "🔗 [wenshushu](${{ steps.wenshushu.outputs.url }})" >> release.txt
         echo "::set-output name=status::success"
 
     - name: Upload firmware to release
