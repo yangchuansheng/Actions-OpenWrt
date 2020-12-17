@@ -47,6 +47,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-18.04
+    environment:
+      name: Actions-OpenWrtAppEnv.prod
+      url: https://abel-node-gh-accelerator.azurewebsites.net
 
     steps:
     - name: Checkout
