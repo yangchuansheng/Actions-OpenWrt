@@ -24,7 +24,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/build-openwrt.yml'
+      - '.github/workflows/build-openwrt-ssh.yml'
 #  schedule:
 #    - cron: 0 8 * * 5
 
