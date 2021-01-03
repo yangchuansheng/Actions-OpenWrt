@@ -172,7 +172,7 @@ jobs:
         git clone https://github.com/Aruelius/wenshushu
         cd wenshushu
         pip3 install requests base58 pycryptodomex
-        python3 wss.py upload ${FIRMWARE} 2>&1 | tee wenshushu.log
+        python3 wss.py upload ${FIRMWARE}/openwrt-x86-64-generic-squashfs-combined.img 2>&1 | tee wenshushu.log
         echo "::warning file=wenshushu.com::$(cat wenshushu.log | grep 公共链接)"
         echo "::set-output name=url::$(cat wenshushu.log | grep 公共链接 | cut -f2 -d"：")"
 
