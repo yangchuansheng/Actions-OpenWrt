@@ -59,5 +59,8 @@ sed -i 's/192.168.1.1/192.168.100.254/g' package/base-files/files/bin/config_gen
 sed -i "s/timezone='UTC'/timezone='CST-8'/" package/base-files/files/bin/config_generate
 sed -i "/timezone='CST-8'/a \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set system.@system[-1].zonename='Asia/Shanghai'" package/base-files/files/bin/config_generate
 
+git clone https://github.com/openwrt/packages /tmp/packages
+cp -rf /tmp/packages/utils/podman feeds/packages/podman
+
 echo "src-git small https://github.com/kenzok8/small" >> feeds.conf.default
 echo "src-git others https://github.com/kenzok8/openwrt-packages" >> feeds.conf.default
