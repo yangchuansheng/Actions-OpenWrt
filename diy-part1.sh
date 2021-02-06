@@ -66,6 +66,7 @@ cp -rf /tmp/packages/utils/conmon package/utils/conmon
 cp -rf /tmp/packages/utils/cni-plugins package/utils/cni-plugins
 cp -rf /tmp/packages/utils/gnupg2 package/utils/gnupg2
 cp -rf /tmp/packages/libs/gpgme package/libs/gpgme
+cp -rf /tmp/packages/libs/libassuan package/libs/libassuan
 
 echo "src-git small https://github.com/kenzok8/small" >> feeds.conf.default
 echo "src-git others https://github.com/kenzok8/openwrt-packages" >> feeds.conf.default
