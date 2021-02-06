@@ -67,6 +67,10 @@ cp -rf /tmp/packages/utils/cni-plugins package/utils/cni-plugins
 cp -rf /tmp/packages/utils/gnupg2 package/utils/gnupg2
 cp -rf /tmp/packages/libs/gpgme package/libs/gpgme
 cp -rf /tmp/packages/libs/libassuan package/libs/libassuan
+cp -rf /tmp/packages/libs/libgpg-error package/libs/libgpg-error
+
+sed "s/+btrfs-progs//g" package/utils/podman/Makefile
+sed "/^GO_PKG_TAGS/c GO_PKG_TAGS=seccomp,exclude_graphdriver_devicemapper,exclude_graphdriver_btrfs,btrfs_noversion" package/utils/podman/Makefile
 
 echo "src-git small https://github.com/kenzok8/small" >> feeds.conf.default
 echo "src-git others https://github.com/kenzok8/openwrt-packages" >> feeds.conf.default
