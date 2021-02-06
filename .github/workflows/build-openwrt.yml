@@ -26,6 +26,8 @@ on:
     paths:
       - '.config'
       - '.github/workflows/build-openwrt.yml'
+      - 'diy-part1.sh'
+      - 'diy-part2.sh'
   schedule:
     - cron: 0 8 * * 5
 
