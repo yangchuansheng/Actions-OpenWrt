@@ -68,6 +68,7 @@ cp -rf /tmp/packages/utils/gnupg2 package/utils/gnupg2
 cp -rf /tmp/packages/libs/gpgme package/libs/gpgme
 cp -rf /tmp/packages/libs/libassuan package/libs/libassuan
 cp -rf /tmp/packages/libs/libgpg-error package/libs/libgpg-error
+mkdir package/lang
 cp -rf /tmp/packages/lang/golang package/lang/golang
 
 sed -i "s/+btrfs-progs//g" package/utils/podman/Makefile
