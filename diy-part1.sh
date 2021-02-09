@@ -68,6 +68,7 @@ cp -rf /tmp/packages/utils/gnupg2 package/utils/gnupg2
 cp -rf /tmp/packages/libs/gpgme package/libs/gpgme
 cp -rf /tmp/packages/libs/libassuan package/libs/libassuan
 cp -rf /tmp/packages/libs/libgpg-error package/libs/libgpg-error
+cp -rf /tmp/packages/libs/libksba package/libs/libksba
 mkdir package/lang
 cp -rf /tmp/packages/lang/golang package/lang/golang
 
