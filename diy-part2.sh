@@ -16,3 +16,5 @@ rm -rf feeds/small/pdnsd-alt
 rm -rf package/lean/kcptun
 rm -rf package/lean/trojan
 rm -rf feeds/small/v2ray-plugin
+rm -rf feeds/packages/utils/runc
+rm -rf package/feeds/packages/runc
