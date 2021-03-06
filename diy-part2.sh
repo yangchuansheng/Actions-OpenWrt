@@ -18,3 +18,5 @@ rm -rf package/lean/trojan
 rm -rf feeds/small/v2ray-plugin
 rm -rf feeds/packages/utils/runc
 rm -rf package/feeds/packages/runc
+rm -rf feeds/packages/utils/containerd
+rm -rf package/feeds/packages/containerd
