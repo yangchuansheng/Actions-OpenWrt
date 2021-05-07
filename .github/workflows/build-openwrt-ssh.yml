@@ -26,7 +26,7 @@ on:
     paths:
       - '.github/workflows/build-openwrt-ssh.yml'
 #  schedule:
-#    - cron: 0 8 * * 5
+#    - cron: 0 8 * * 4
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
