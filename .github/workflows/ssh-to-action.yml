@@ -1,4 +1,4 @@
-### .github/workflows/my-build.yml
+## .github/workflows/my-build.yml
 name: Debugging with SSH
 on: 
   push:
