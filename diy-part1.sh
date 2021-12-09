@@ -76,7 +76,7 @@ mkdir package/lang
 cp -rf /tmp/packages/lang/golang package/lang/golang
 
 sed -i "s/+btrfs-progs//g" package/utils/podman/Makefile
-sed -i "s/+conmon//g" package/utils/podman/Makefile
+# sed -i "s/+conmon//g" package/utils/podman/Makefile
 sed -i "/^GO_PKG_TAGS/c GO_PKG_TAGS=seccomp,exclude_graphdriver_devicemapper,exclude_graphdriver_btrfs,btrfs_noversion" package/utils/podman/Makefile
 
 echo "src-git small https://github.com/kenzok8/small" >> feeds.conf.default
