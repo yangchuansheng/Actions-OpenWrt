@@ -1,6 +1,12 @@
 # .github/workflows/my-build.yml
 name: Debugging with SSH
 on: 
+  push:
+    branches:
+      - dev
+    paths:
+      - '.config'
+      - '.github/workflows/ssh-to-action.yml'
   watch:
     types: started
 jobs:
