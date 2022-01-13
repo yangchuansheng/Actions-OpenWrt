@@ -21,3 +21,4 @@ sed -i "/timezone='CST-8'/a \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set system.@system[-
 
 echo "src-git small https://github.com/kenzok8/small" >> feeds.conf.default
 echo "src-git others https://github.com/kenzok8/openwrt-packages" >> feeds.conf.default
+echo "src-git netmaker http://github.com/sbilly/netmaker-openwrt.git" >> feeds.conf.default
