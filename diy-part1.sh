@@ -54,6 +54,8 @@ cat > package/base-files/files/etc/banner <<EOF
 ——————————————————————————女神保佑，代码无bug——————————————————————
 EOF
 
+cp $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.100.254/g' package/base-files/files/bin/config_generate
 sed -i "s/timezone='UTC'/timezone='CST-8'/" package/base-files/files/bin/config_generate
@@ -81,3 +83,4 @@ sed -i "/^GO_PKG_TAGS/c GO_PKG_TAGS=seccomp,exclude_graphdriver_devicemapper,exc
 
 echo "src-git small https://github.com/kenzok8/small" >> feeds.conf.default
 echo "src-git others https://github.com/kenzok8/openwrt-packages" >> feeds.conf.default
+echo "src-git netmaker http://github.com/sbilly/netmaker-openwrt.git" >> feeds.conf.default

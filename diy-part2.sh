@@ -20,3 +20,8 @@ rm -rf feeds/packages/utils/runc
 rm -rf package/feeds/packages/runc
 rm -rf feeds/packages/utils/containerd
 rm -rf package/feeds/packages/containerd
+
+# netmaker
+sed -i "/^PKG_VERSION/ c\PKG_VERSION:=0.9.3" feeds/netmaker/netmaker/Makefile
+sed -i "/^PKG_SOURCE_VERSION/ c\PKG_SOURCE_VERSION:=106047243720605df6757ce706690a434d976c1a" feeds/netmaker/netmaker/Makefile
+sed -i "/^PKG_SOURCE_DATE/ c\PKG_SOURCE_DATE:=20220107" feeds/netmaker/netmaker/Makefile
