@@ -16,3 +16,6 @@ rm -rf feeds/small/pdnsd-alt
 rm -rf package/lean/kcptun
 rm -rf package/lean/trojan
 rm -rf feeds/small/v2ray-plugin
+
+sed -ri 's/luci-theme-\S+/luci-theme-ifit/g' feeds/luci/collections/luci/Makefile
+sed -i "s/sys.hostname()/\"WEEXIANG\"/g" feeds/others/luci-theme-ifit/files/templates/header.htm
