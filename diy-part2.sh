@@ -19,3 +19,5 @@ rm -rf feeds/small/v2ray-plugin
 
 sed -ri 's/luci-theme-\S+/luci-theme-ifit/g' feeds/luci/collections/luci/Makefile
 sed -i "s/sys.hostname()/\"WEEXIANG\"/g" feeds/others/luci-theme-ifit/files/templates/header.htm
+sed -i "/Powered by/ c\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BAILIAN data ltd" feeds/others/luci-theme-ifit/files/templates/footer.htm
+sed -i "/ver.distversion/d" feeds/others/luci-theme-ifit/files/templates/footer.htm
