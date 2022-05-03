@@ -1,6 +1,7 @@
 # .github/workflows/my-build.yml
 name: Debugging with SSH
 on: 
+  workflow_dispatch:
   push:
     branches:
       - main
