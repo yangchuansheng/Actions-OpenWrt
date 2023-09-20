@@ -19,6 +19,8 @@ jobs:
         with:
           submodules: recursive # Fetch submodules
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          repository: 'labring/FastGPT'
+          ref: 'main'
 
       # Step 3 - Install Hugo (specific version)
       - name: Install Hugo
