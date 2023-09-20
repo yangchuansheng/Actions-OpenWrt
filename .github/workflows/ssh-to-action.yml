@@ -29,12 +29,6 @@ jobs:
           hugo-version: '0.117.0'
           extended: true
 
-      # Step 4 - Builds the site using Hugo
-      - name: Build
-        run: cd docSite && hugo -v --minify
-        env:
-          HUGO_BASEURL: ${{ vars.BASE_URL }}
-
       - name: Try Build
         run: ./not-exist-file.sh it bloke build
 
